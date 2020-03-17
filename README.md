@@ -128,6 +128,13 @@ public class StringClassMain {
 
 		String sd = "Welcome to CUBA";
 		System.out.println(Arrays.toString(sd.toCharArray()));
+		
+		
+		System.out.println("concat--------------------");
+
+		String f = "Welcome to CUBA";
+		String g = " My Friend";
+		System.out.println(f.concat(g));//Welcome to CUBA My Friend
 
 	}
 
