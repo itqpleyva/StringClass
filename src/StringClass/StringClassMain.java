@@ -1,6 +1,14 @@
 package StringClass;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class StringClassMain {
 
@@ -134,6 +142,22 @@ public class StringClassMain {
 		String f = "Welcome to CUBA";
 		String g = " My Friend";
 		System.out.println(f.concat(g));//Welcome to CUBA My Friend
+		
+		System.out.println("------------------------------------------------------------");
+		//three ways to convert array into list using streams
+		System.out.println("three ways to convert array into list using streams");
+		int intArray[] = {1, 2, 3, 4, 5};
+        List<Integer> integerList1 = Arrays.stream(intArray).boxed().collect(Collectors.toList());
+        System.out.println("List #1: " + integerList1);
+ 
+        /**** 'IntStream.of' or 'Arrays.stream' Gives The Same Output ****/
+        List<Integer> integerList2 = IntStream.of(intArray).boxed().collect(Collectors.toList());
+        System.out.println("List #2: " + integerList2);
+ 
+        /**** Converting an 'Integer' Array to List ****/
+        Integer integerArray[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        List<Integer> integerList3 = Arrays.stream(integerArray).collect(Collectors.toList());
+        System.out.println("List #3: " + integerList3);
 	}
 
 }
